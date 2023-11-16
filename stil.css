@@ -1,0 +1,858 @@
+/* Jeg resetter min css kode*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ---------------- Vores css starter her ------------------ */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Helvetica, sans-serif;
+    background-color: #ffff;
+  }
+  
+  a {
+    color: #000;
+  }
+  
+  /* ------------------------ header med burgermenu og søgefunktion ---------------------------- */
+  
+  .logo{
+    width: 120px;
+    height: auto;
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+
+  
+  .header {
+    background-color: #fff;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+    border-bottom: solid #303a7d 2px;
+  }
+  
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-family: Garamond;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+
+  .sog{
+    display: none;
+  }
+
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    background-color: #ffff;
+  }
+
+  /*submenu*/
+
+  .submenu {
+    border: none;
+  }
+  .menu li{
+    position: relative;
+  }
+  .menu li ul {
+    display: none;
+    position: relative;
+    background-color:#dedede; /* Baggrundsfarve for submenu */
+    width: 100%;
+    height: 250px;
+}
+
+  .menu li:hover ul {
+    display: block;
+}
+
+  .menu li ul li {
+    float:none; 
+    position: relative;
+}
+.menu li ul li:hover {
+  background-color: #ffff;
+}
+
+.menu li ul li a{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    display: inline-block;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #303a7d;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: 0.2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #303a7d;
+    content: '';
+    display: block;
+    height: 100%; 
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 280px;
+    
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  .menu-punkt {
+    text-align: center;
+  }
+
+/* --------------------- Forside mobile --------------------------------*/
+
+/*billede*/
+.forside-billede {
+  width: 100%;
+  display: flex;
+}
+
+.forside-billede img{
+  max-width: 100%;
+}
+
+/* indhold */
+.streg {
+  display: flex;
+  padding-top: 3%;
+  width: 100%;
+}
+
+.streg img {
+  max-width: 100%;
+  height: auto;
+}
+
+.intro h1{
+  font-family: garamond;
+  color: #303a7d;
+  font-size: 50px;
+  text-align: center;
+  padding: 20px
+}
+.intro p{
+  font-family: garamond;
+  color: #303a7d;
+  font-size: 25px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+
+.aabningstider {
+  font-family: garamond;
+  color: #303a7d;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px
+}
+
+.aabningstider p{
+  font-family: garamond;
+  color: #303a7d;
+  font-size: 25px;
+}
+
+.forside-row{
+  flex: 1;
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.forside-item img{
+  flex: 1;
+  text-align: center;
+  max-width: 70%;
+  padding:20px
+
+}
+
+.om-os {
+  font-family: garamond;
+  color: #303a7d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* ------------- Produkt - mobile ---------------*/
+.overskrift_produkter{
+  color: #303a7d;
+  font-family: garamond;
+  text-align: center;
+  font-size: xx-large;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.produkter {
+  display: flex;
+  justify-content: center;
+}
+
+.jump:hover {
+  transform: scale(1.1);
+}
+
+.produkter img {
+  max-width: 100%;
+}
+
+.produkter-gavekort {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 30px 0px;
+}
+
+.produkter-gavekort a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produkter-gavekort img {
+  max-width: 35%;
+}
+
+
+
+/*-------- Produkt, klippekort, mobile -------*/
+.overskrift_klippekort{
+  color: #303a7d;
+  font-family: garamond;
+  text-align: center;
+  font-size: xx-large;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.klippekort-billede img{
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.klippekort-billede p{
+  font-family: garamond;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 20px;
+  padding: 30px;
+  line-height: 1.5;
+}
+
+/*-------- Produkt, gavekort, mobile -------*/
+.overskrift_gavekort{
+  color: #303a7d;
+  font-family: garamond;
+  text-align: center;
+  font-size: xx-large;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.image-container{
+  text-align: center;
+  padding: 30px;
+}
+.image-container img{
+  max-width: 70%;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-linje img{
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.gavekort-billede p{
+font-family: garamond;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 20px;
+  padding: 30px;
+  line-height: 1.5;
+}
+
+/* ----------------- Collab mobile ----------*/
+.overskrift_collabs{
+  color: #303a7d;
+  font-family: garamond;
+  text-align: center;
+  font-size: xx-large;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.collab-billeder{
+  padding-bottom: 30px;
+}
+.collab-billeder img{
+  max-width: 100%;
+}
+
+/*-------- Collab - submenuer - mobile -------*/
+.collab-billeder p{
+  font-family: garamond;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 20px;
+  padding: 30px;
+  line-height: 1.5;
+}
+
+/*  ---------- Events mobile --------------  */
+
+.overskift_events {
+  color:#303a7d;
+  font-family: Garamond;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 4%;
+}
+
+.tekst1_events {
+  font-family: Garamond;
+  text-align: center;
+  line-height: 1.5;
+}
+
+#bliv {
+  font-family: Garamond;
+  text-align: center;
+  line-height: 1.5;
+}
+
+#kommed {
+  font-family: Garamond;
+  text-align: center;
+  line-height: 1.5;
+}
+
+#popop {
+  font-family: Garamond;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.events_overskrift {
+  font-family: Garamond;
+  text-align: center;
+  line-height: 2;
+}
+
+.billeder_events {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.billeder_events img {
+  max-width: 100%;
+}
+
+.tilmeldning {
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
+/* ------ Om os side mobile ------ */
+.overskrift_omos {
+  color:#303a7d;
+  font-family: Garamond;
+  font-size: 45px;
+  text-align: center;
+  margin-top: 4%;
+}
+
+.info_aabning {
+  color: #000000;
+  font-family: Garamond;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.5;
+  padding: 30px 40px 20px 40px;
+}
+
+.information_omos {
+  color: #000000;
+  font-family: Garamond;
+  text-align: center;
+  font-size: large;
+  line-height: 1.5;
+  padding: 30px 40px 30px 40px;
+}
+
+.omos_bund {
+  margin-top: 50px;
+  padding: 30px 60px 20px 60px;
+}
+
+.collage {
+  display: flex;
+  margin: 10px 10px 30px 10px;
+  justify-content: center;
+}
+
+.collage img {
+  max-width: 100%;
+}
+
+/* ----------- kontakt side mobile ---------- */
+.overskrift_kontakt {
+  color:#303a7d;
+  font-family: Garamond;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 4%;
+}
+
+.informationer {
+  color:#000000;
+  font-family: Garamond;
+  text-align: center;
+  font-size: large;
+  line-height: 250%;
+}
+
+.billeder_kontakt {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#badepige {
+  width: 20%;
+}
+
+#kop {
+  width: 15%;
+}
+
+
+/* ----------------- Footer mobile ----------- */
+.footer {
+  background-color: #ffff;
+  color: #303a7d;
+  font-family: Garamond;
+  margin-top: auto;
+  border-top: solid #303a7d 2px;
+  padding: 5px 10px 20px 10px;
+}
+  
+
+.ikoner {
+  display: flex;
+  align-items: center;
+}
+
+.ikoner img {
+  max-width: 35px;
+  margin: 10px 3px;
+  
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.footer-row h5 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+.footer-row p {
+  padding-left: 15px;
+}
+
+
+
+/* Media - computer */
+
+@media only screen and (max-width: 767px) {
+  img.logo {
+    width: 120px;
+    height: auto;
+  }
+}
+  @media (min-width: 768px) {
+    
+    /* header desktop */
+    .header {
+      margin-bottom: auto;
+    }
+    .header li {
+      float: left;
+      font-size: 20px;
+    }
+    .header li a {
+      padding: 20px 30px;
+      justify-content: space-between;
+    }
+    .header .menu {
+      clear: none;
+      max-height: none;
+      border-top: solid #303a7d 2px;
+      
+    }
+    .header .menu-icon {
+      display: none;
+    }
+    .logo{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px 0px 20px 0px;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .menu li ul {
+      border-bottom: none;
+      background-color:#ffff; 
+    }
+
+    .sog{
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      
+    }
+
+    .sog img{
+      width: 40px;
+      height: auto;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+
+
+    /* forside desktop */
+
+    .forside-billede {
+      max-height: 100%;
+      position: absolute;
+      top: 120px;
+      left: 0;
+      z-index: -1;
+    }
+    
+
+    .forside-row{
+      flex-direction: row;
+      max-width: 100%;
+      justify-content: center; 
+    }
+
+    .streg {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+
+    .forside-indhold{
+      padding-top: 600px;
+      z-index: 2;
+    }
+    /* produkter desktop */
+
+    .produkter img {
+      max-width: 90%;
+      padding: 10px;
+      margin-left: 30px;
+    }
+    .produkter-gavekort img {
+      max-width: 100%;
+      margin: 30px;
+    }
+
+    
+
+    /* produkt submenu klippekort */
+    .klippekort-billede {
+      display: block;
+      margin: 0 auto;
+      max-width: 40%; /* Adjust the width as needed */
+    }
+
+     /* produkt submenu gavekort */
+     .overskrift_gavekort{
+      color: #303a7d;
+      font-family: garamond;
+      text-align: center;
+      font-size: xx-large;
+      padding-top: 30px;
+      padding-bottom: 40px;
+     }
+
+     .gavekort-billede {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .image-container {
+      display: inline-block; /* To control individual image containers */
+    }
+
+    .image-linje{
+      max-width: 50%;
+      padding: 20px;
+    }
+    
+    .gavekort-billede img {
+      max-width: 70%; /* Adjust image width if needed */
+    }
+
+    .gavekort-billede p{
+      font-family: garamond;
+      font-size: 20px;
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+    
+  
+    /*collab menupunkt desktop*/
+    .overskrift_collabs{
+      color: #303a7d;
+      font-family: garamond;
+      text-align: center;
+      font-size: xx-large;
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+
+    .collab-billeder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .collab-billeder img {
+      width: 500px; /* Set a specific width */
+      height: 500px; /* Set a specific height */
+      object-fit: cover; /* Maintain aspect ratio */
+      margin: 5px; /* Add space between images */
+      padding-bottom: 30px;
+    }
+
+    /* events desktop */
+
+    .event_badeklub {
+      display: flex;
+      justify-content: center;  
+      margin-top: 3%;
+    }
+
+    .event_kaffesmagning {
+      display: flex;
+      justify-content: center; 
+      flex-direction: row-reverse; 
+      margin-top: 3%;
+    }
+
+    .event_cupping {
+      display: flex;
+      justify-content: center;  
+      margin-top: 3%;
+    }
+
+    .billeder_events img {
+      max-width: 600px;
+      height: auto;
+    }
+
+    .tekst1 {
+      margin-top: 0.3%;
+    }
+
+    .tekst2 {
+      margin-top: 0.3%;
+    }
+
+    .tekst3 {
+      margin-top: 0.3%;
+    }
+
+    
+    /* om os desktop */
+
+    .collage img {
+      max-width: 70%;
+    }
+
+    .omos_indhold {
+      display: flex;
+      padding-top: 30px;
+      margin: 0px 30px 0px 30px;
+    }
+
+    .information_omos {
+      padding-top: 0px;
+    }
+    
+
+    /* kontakt desktop*/
+    .overskrift_kontakt {
+      margin-top: 2%;
+    }
+
+    .informationer {
+    line-height: 200%;
+    }
+
+    #badepige {
+     max-width: 8%;
+    }
+    
+    #kop{
+      max-width: 6%;
+    }
+
+   
+    /* footer desktop */
+    .footer-columns {
+      flex-direction: row;
+    }
+    .footer {
+      padding: 20px 70px 20px 50px;
+    }
+
+  }
